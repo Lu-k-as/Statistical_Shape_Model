@@ -1,0 +1,16 @@
+clear all;
+load("daten.mat");
+
+axis equal
+disp('Covariance Data 1: ')
+ourCov(data1)
+plot(data1)
+disp('Covariance Data 2: ')
+ourCov(data2)
+plot(data2)
+disp('Covariance Data 3: ')
+ourCov(data3)
+plot(data3)
+disp('Covariance Data 4: ')
+ourCov(data4)
+plot(data4)

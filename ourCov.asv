@@ -1,0 +1,29 @@
+% Task 1 - Covariance matrix
+% (a) Implement a function ourCov.m, that computes the covariance matrix C of a data
+%     matrix D. Using the matlab built-in function cov for implementation is prohibited but
+%     it can be used to compare your results (cov takes a n × d matrix as input). (3 points)
+% (b) Compute C for all matrices in daten.mat. Visualize the data utilizing plot in separate figures 
+%     and set the axis to equal scale (axis equal). Interpret the resulting
+%     covariance matrices C of all datasets! Which position in C holds which information?
+%     (3 points)
+
+clear all;
+
+A = rand(2,5)
+
+
+mean = sum(A,2)/size(A,2);
+
+C = zeros(size(A,1), size(A,1));
+
+for i = 1:size(A,1)
+    for j = 1:size(A,1)
+        tmp=0;
+        for n = 1:size(A,2)
+            tmp = tmp + (A(i,n)-mean(i))*(A(j,n)- mean(j));
+        end
+        C(i,j)=tmp;
+    end
+end
+C
+cov(A.')*(size(A,2)-1)

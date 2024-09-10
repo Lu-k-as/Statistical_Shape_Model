@@ -1,0 +1,21 @@
+clear all;
+load("daten.mat");
+
+axis equal
+disp('Covariance Data 1: ')
+ourCov(data1)
+plot(transpose(data1))
+disp('Covariance Data 2: ')
+ourCov(data2)
+plot(transpose(data2))
+disp('Covariance Data 3: ')
+ourCov(data3)
+plot(transpose(data3))
+disp('Covariance Data 4: ')
+ourCov(data4)
+cov(transpose(data4))
+plot(transpose(data4))
+
+A = [1 2 3 ; 2 2 4];
+ourCov(A)
+cov(transpose(A))
